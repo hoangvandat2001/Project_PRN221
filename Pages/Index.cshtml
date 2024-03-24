@@ -1,10 +1,64 @@
 ﻿@page
+@using Project_PRN221.Model
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thời Khóa Biểu</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2> Book Room</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Room</th>
+                <th>TimeSlot</th>
+                <th>Class</th>
+                <th>Subject</th>
+                <th>Teacher</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Class c in Model.listClass)
+            {
+                <tr>
+                    <td>@c.Room.RoomName</td>
+                    <td>@c.Timeslot.SlotNumber @c.Timeslot.DayOfWeek @c.Timeslot.SlotType</td>
+                    <td>@c.ClassName</td>
+                    <td>@c.Subject.SubjectName</td>
+                    <td>@c.Teacher.TeacherName</td>
+                    
+                </tr>
+                
+            }
+            <!--Thêm các hàng dọc cho các phòng học khác-->
+        </tbody>
+    </table>
+
+</body>
+</html>
+
