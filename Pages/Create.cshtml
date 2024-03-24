@@ -1,0 +1,40 @@
+﻿@page
+@model Project_PRN221.Pages.CreateModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Class</title>
+</head>
+<body>
+    <h1>Create a new Class</h1>
+
+    <form method="post">
+        <div>
+            <label for="room">Room:</label>
+            <input type="text" id="room" name="room" required>
+        </div>
+        <div>
+            <label for="timeSlot">Time Slot:</label>
+            <input type="text" id="timeSlot" name="timeSlot" required>
+        </div>
+        <div>
+            <label for="class">Class:</label>
+            <input type="text" id="class" name="class" required>
+        </div>
+        <div>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+        </div>
+        <div>
+            <label for="teacher">Teacher:</label>
+            <input type="text" id="teacher" name="teacher" required>
+        </div>
+
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

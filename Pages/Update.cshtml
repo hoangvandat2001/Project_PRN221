@@ -1,0 +1,40 @@
+﻿@page
+@model Project_PRN221.Pages.UpdateModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Class</title>
+</head>
+<body>
+    <h2>Update Class Information</h2>
+
+    <form method="post">
+        <div>
+            <label for="room">Room:</label>
+            <input type="text" id="room" name="room" value="@Model.Room" required>
+        </div>
+        <div>
+            <label for="timeSlot">Time Slot:</label>
+            <input type="text" id="timeSlot" name="timeSlot" value="@Model.TimeSlot" required>
+        </div>
+        <div>
+            <label for="class">Class:</label>
+            <input type="text" id="class" name="class" value="@Model.Class" required>
+        </div>
+        <div>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" value="@Model.Subject" required>
+        </div>
+        <div>
+            <label for="teacher">Teacher:</label>
+            <input type="text" id="teacher" name="teacher" value="@Model.Teacher" required>
+        </div>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

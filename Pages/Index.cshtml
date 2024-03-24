@@ -31,7 +31,13 @@
 <body>
 
     <h2> Book Room</h2>
+    <form method="post">
+        <label for="avatar">Choose a profile picture:</label>
 
+        <input type="file" id="file" name="file" accept=".csv" />
+
+        <button type="submit">ShowData</button>
+    </form>
     <table>
         <thead>
             <tr>
@@ -43,21 +49,27 @@
             </tr>
         </thead>
         <tbody>
-            @foreach(Class c in Model.listClass)
+            @foreach(ClassModel c in Model.listClass)
             {
                 <tr>
-                    <td>@c.Room.RoomName</td>
-                    <td>@c.Timeslot.SlotNumber @c.Timeslot.DayOfWeek @c.Timeslot.SlotType</td>
-                    <td>@c.ClassName</td>
-                    <td>@c.Subject.SubjectName</td>
-                    <td>@c.Teacher.TeacherName</td>
-                    
+                    <td>@c.Room</td>
+                    <td>@c.TimeSlot</td>
+                    <td>@c.Class</td>
+                    <td>@c.Subject</td>
+                    <td>@c.Teacher</td>
+                    <td><a href="/Update?ID=@c.ID&amp;room=@c.Room&amp;timeSlot=@c.TimeSlot&amp;class=@c.Class&amp;subject=@c.Subject&amp;teacher=@c.Teacher">Update</a></td>
+                    <td><a href="/Delete?ID=@c.ID">Delete</a></td>
                 </tr>
                 
             }
             <!--Thêm các hàng dọc cho các phòng học khác-->
         </tbody>
     </table>
+        
+        <a href="/Create" >Add</a>
+        <a href="/Schedule" >Add</a>
+ 
+       
 
 </body>
 </html>
